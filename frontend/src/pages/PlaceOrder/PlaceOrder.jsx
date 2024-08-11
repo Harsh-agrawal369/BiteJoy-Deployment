@@ -53,7 +53,7 @@ const PlaceOrder = () => {
       console.log("Order data being sent:", orderData);
       console.log("Token:", token);
       const response = await axios.post(`${API_URL}/api/order/place`, orderData, {
-        headers: { token },
+        headers: { token: token },
       });
 
       if (response.data.success) {
