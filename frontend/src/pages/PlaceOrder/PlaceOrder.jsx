@@ -59,6 +59,7 @@ const PlaceOrder = () => {
         const { session_url } = response.data;
         window.location.replace(session_url);
       } else {
+        console.error("Order failed:", response.data.message);  
         toast.error("Could not place order. Internal server error.");
       }
     } catch (error) {
