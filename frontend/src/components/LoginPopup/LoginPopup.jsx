@@ -36,9 +36,12 @@ const LoginPopup = ({ setShowLogin }) => {
     }
 
     try {
+
+      console.log("Data being sent:", data);
       const response = await axios.post(newUrl, data);
 
       if (response.data.success) {
+        console.log("I got the response");
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("name", response.data.name);
         setToken(response.data.token);

@@ -15,6 +15,8 @@ const loginUser = async (req, res) => {
     const { email, password } = req.body;
 
     try {  
+
+        console.log("Yes I'm able to communiate with the backend");
         // Validate email and password
         if (!validator.isEmail(email)) {
             return res.json({ success: false, message: "Invalid email" });
@@ -38,7 +40,7 @@ const loginUser = async (req, res) => {
             return res.json({ success: false, message: "Invalid credentials" });
         }
 
-
+        console.log("User Found");
         // Create token using jwt
         const token = createToken(user.id);
         res.json({ success: true, token: token, name: user.name });
