@@ -85,8 +85,8 @@ const placeOrder = async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       line_items,
       mode: "payment",
-      success_url: `https://bite-joy-food-delivery.vercel.app/verify?success=true&orderId=${newOrder.id}`,
-      cancel_url: `https://bite-joy-food-delivery.vercel.app//verify?success=false&orderId=${newOrder.id}`,
+      success_url: `https://bite-joy-deployment.vercel.app/verify?success=true&orderId=${newOrder.id}`,
+      cancel_url: `https://bite-joy-deployment.vercel.app/verify?success=false&orderId=${newOrder.id}`,
     });
 
     //   console.log("Stripe session created:", session);
